@@ -1,0 +1,22 @@
+{
+  "name": "edutrack",
+  "version": "1.0.0",
+  "description": "EduTrack - Student Performance & Attendance Analytics System (CSE494)",
+  "type": "module",
+  "scripts": {
+    "setup:db": "node mongodb/validators.js && node mongodb/indexes.js",
+    "seed": "node mongodb/seed.js",
+    "reset": "node mongodb/reset.js",
+    "test:queries": "node mongodb/queries.js",
+    "server": "npm --prefix server start",
+    "client": "npm --prefix client dev",
+    "dev": "concurrently \"npm --prefix server start\" \"npm --prefix client dev\""
+  },
+  "dependencies": {
+    "mongodb": "^6.14.2",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
